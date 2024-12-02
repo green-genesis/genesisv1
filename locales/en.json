@@ -1,0 +1,20 @@
+{
+  "Home": "Home",
+  "Login": "Login",
+  "Register": "Register",
+  "Logout": "Logout",
+  "Dashboard": "Dashboard",
+  "Welcome": "Welcome",
+  "Sensor Data": "Sensor Data",
+  "Temperature": "Temperature",
+  "Humidity": "Humidity",
+  "Soil Moisture": "Soil Moisture",
+  "pH Level": "pH Level",
+  "Generate AI Analysis": "Generate AI Analysis",
+  "Unresolved Issues": "Unresolved Issues",
+  "Resolve": "Resolve",
+  "Simulate an Issue": "Simulate an Issue",
+  "PIN": "PIN",
+  "Submit": "Submit",
+  "Back to Dashboard": "Back to Dashboard"
+}

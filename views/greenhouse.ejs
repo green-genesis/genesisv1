@@ -1,0 +1,65 @@
+<!-- views/greenhouse.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= greenhouse.name %> - Green Genesis</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav class="navbar">
+      <div class="navbar-brand">Green Genesis</div>
+      <div class="navbar-menu">
+        <a href="/dashboard">Dashboard</a>
+        <a href="/logout">Logout</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <section class="section">
+      <h1><%= greenhouse.name %></h1>
+      <h2>Live Sensor Data</h2>
+      <% if (data.length === 0) { %>
+        <p>No sensor data available.</p>
+      <% } else { %>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Timestamp</th>
+              <th>Temperature (°C)</th>
+              <th>Humidity (%)</th>
+              <th>Soil Moisture</th>
+              <th>pH Level</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% data.forEach(function(row) { %>
+              <tr>
+                <td><%= row.timestamp %></td>
+                <td><%= row.temperature %></td>
+                <td><%= row.humidity %></td>
+                <td><%= row.soil_moisture %></td>
+                <td><%= row.ph_level %></td>
+              </tr>
+            <% }); %>
+          </tbody>
+        </table>
+      <% } %>
+
+      <!-- AI Analysis Button -->
+      <form action="/greenhouse/<%= greenhouse.id %>/analyze" method="post">
+        <button type="submit" class="form-button">Generate AI Analysis</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Green Genesis. All rights reserved.</p>
+  </footer>
+</body>
+</html>

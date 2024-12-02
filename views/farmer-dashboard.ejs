@@ -1,0 +1,56 @@
+<!-- views/farmer-dashboard.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard - Green Genesis</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav class="navbar">
+      <div class="navbar-brand">Green Genesis</div>
+      <div class="navbar-menu">
+        <a href="/">Home</a>
+        <a href="/logout">Logout</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <section class="section">
+      <h1>Welcome, <%= username %></h1>
+      <h2>Your Greenhouses</h2>
+      <% if (greenhouses.length === 0) { %>
+        <p>You have no greenhouses yet.</p>
+      <% } else { %>
+        <div>
+          <% greenhouses.forEach(function(greenhouse) { %>
+            <div class="card">
+              <h2><%= greenhouse.name %></h2>
+              <a href="/greenhouse/<%= greenhouse.id %>" class="button">View Greenhouse</a>
+            </div>
+          <% }); %>
+        </div>
+      <% } %>
+
+      <!-- Add New Greenhouse -->
+      <h2>Add a New Greenhouse</h2>
+      <form action="/add-greenhouse" method="post">
+        <div class="form-group">
+          <label class="form-label">Greenhouse Name</label>
+          <input type="text" name="name" class="form-control" required>
+        </div>
+        <button type="submit" class="form-button">Add Greenhouse</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Green Genesis. All rights reserved.</p>
+  </footer>
+</body>
+</html>

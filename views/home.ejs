@@ -1,0 +1,51 @@
+<!-- views/home.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Green Genesis - Innovating Agriculture</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav class="navbar">
+      <div class="navbar-brand">Green Genesis</div>
+      <div class="navbar-menu">
+        <a href="/">Home</a>
+        <% if (!session.userId) { %>
+          <a href="/login">Login</a>
+          <a href="/register">Register</a>
+        <% } else { %>
+          <a href="/dashboard">Dashboard</a>
+          <a href="/logout">Logout</a>
+        <% } %>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section -->
+    <section class="section" style="text-align: center;">
+      <img src="/images/hero.jpg" alt="Greenhouse Technology">
+      <h1>Welcome to Green Genesis</h1>
+      <p>Empowering sustainable agriculture through innovative greenhouse solutions.</p>
+      <a href="/register" class="button">Get Started</a>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section">
+      <div class="card">
+        <h2>Our Vision</h2>
+        <p>At Green Genesis, we strive to revolutionize agriculture by integrating cutting-edge technology with sustainable practices. Join us in shaping the future of farming.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Green Genesis. All rights reserved.</p>
+  </footer>
+</body>
+</html>

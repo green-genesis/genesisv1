@@ -1,0 +1,47 @@
+<!-- views/technician-dashboard.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Technician Dashboard - Green Genesis</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav class="navbar">
+      <div class="navbar-brand">Green Genesis</div>
+      <div class="navbar-menu">
+        <a href="/">Home</a>
+        <a href="/logout">Logout</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <section class="section">
+      <h1>Technician Dashboard</h1>
+      <h2>Unresolved Issues</h2>
+      <% if (issues.length === 0) { %>
+        <p>No issues reported.</p>
+      <% } else { %>
+        <% issues.forEach(function(issue) { %>
+          <div class="card">
+            <h3>Issue in Greenhouse ID: <%= issue.greenhouse_id %></h3>
+            <p><%= issue.description %></p>
+            <form action="/resolve-issue/<%= issue.id %>" method="post">
+              <button type="submit" class="form-button">Resolve Issue</button>
+            </form>
+          </div>
+        <% }); %>
+      <% } %>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Green Genesis. All rights reserved.</p>
+  </footer>
+</body>
+</html>

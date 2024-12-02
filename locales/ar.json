@@ -1,0 +1,21 @@
+{
+    "Home": "الرئيسية",
+    "Login": "تسجيل الدخول",
+    "Register": "إنشاء حساب",
+    "Logout": "تسجيل الخروج",
+    "Dashboard": "لوحة التحكم",
+    "Welcome": "مرحبا",
+    "Sensor Data": "بيانات المستشعرات",
+    "Temperature": "درجة الحرارة",
+    "Humidity": "الرطوبة",
+    "Soil Moisture": "رطوبة التربة",
+    "pH Level": "مستوى الحموضة",
+    "Generate AI Analysis": "تحليل بواسطة الذكاء الاصطناعي",
+    "Unresolved Issues": "المشاكل غير المحلولة",
+    "Resolve": "حل",
+    "Simulate an Issue": "محاكاة مشكلة",
+    "PIN": "الرمز",
+    "Submit": "إرسال",
+    "Back to Dashboard": "العودة إلى لوحة التحكم"
+  }
+  
